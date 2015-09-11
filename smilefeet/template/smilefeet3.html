@@ -1,0 +1,79 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>www.smilefeet.co.kr</title>
+<style type="text/css">
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select,blockquote{padding:0;margin:0;font:normal 12px NanumGothic, arial, 돋움;color:#777;}
+ul,li,ol,dl{list-style:none}
+a:link,a:hover,a:visited,a:active{text-decoration:none; color:#777}
+hr,legend{display:none}
+img,fieldset,button{border:0}
+p{font-size:17px;}
+*{border:0;}
+#wrap{width:1024px;height:1550px;;border:1px solid black;}
+#main{width:990px; height:700px; border:1px solid black; margin:15px;}
+#main1 .m1{margin:30px 0 50px 105px;}
+#main1 .m2{width:700px;; height:210px; margin-left:100px;}
+#main1 .m2 ul .m2-1{margin:10px 0 50px 60px;}
+#main1 .m2 ul .m2-2{margin-left:60px;}
+#main1 .m2 ul li{float:left;}
+#main1 .m3{margin:50px 0 50px 105px;clear:both;}
+#main1 .m4 ul .m4-1{margin:30px 0 0 60px;}
+#main1 .m4{margin-left:105px;}
+#main1 .m4 ul li{float:left;}
+#main4{width:990px; height:800px; border:1px solid black; margin:15px;}
+#main4 .foot{position:absolute;left:450px; top:810px;width:200px; height:117px;}
+#main4 .t1{margin:20px 0 40px 30px;}
+#main4 .t2{margin:20px 0 40px 30px;}
+#main4 .t3{width:960px; hiehgt:146px; margin:0 0 40px 30px;}
+#main4 .t3 ul{width:960px; height:150px;}
+#main4 .t3 ul li{float:left;}
+#main4 .t3 ul .img1{margin-right:50px;}
+#main4 .t4{margin:20px 0 40px 30px;}
+#main4 .t5{margin:20px 0 40px 30px;}
+.next{width:220px; height:80px; position:absolute; left:405px; top:1580px; margin-bottom:50px;}
+</style>
+</head>
+
+<body>
+<div id="wrap">	
+	<div id="main">
+		<div id="main1">
+			<div class="m1"><img src="{% static "page3/text01.png" %}" width="259" height="23" alt=""/></div>
+			<div class="m2">
+				<ul>
+                    <li><img src="{% static "page3/img1.png" %}" width="400px" height="200px" alt=""/></li>
+                    <li class="m2-1"><img src="{% static "page3/text02.png" %}" width="239" height="46" alt=""/></li>
+                    <li class="m2-2"><img src="{% static "page3/text03.png" %}" width="220" height="47" alt=""/></li>
+                </ul>
+			</div>    
+			<div class="m3"><img src="{% static "page3/text04.png" %}" width="219" height="22" alt=""/></div>
+			<div class="m4">
+                <ul>
+                    <li><img src="{% static "page3/img2.png" %}" width="400" height="200" alt=""/></li>
+                    <li class="m4-1"><img src="{% static "page3/text05.png" %}" width="213" height="72" alt=""/></li>
+                </ul>
+            </div>                
+    </div>
+
+	</div>
+    <div id="main3">
+    	<div id="main4">
+			<div class="t1"><img src="{% static "page3/text1.png" %}" width="150" height="21" alt=""/></div>
+            <div class="t2"><img src="{% static "page3/text2.png" %}" width="889" height="144" alt=""/></div>
+            <div class="t3">
+            	<ul>
+                	<li class="img1"><img src="{% static "page3/text3.png" %}" width="562" height="146" alt=""/></li>
+                    <li><img src="{% static "page3/foot.png" %}" width="280" height="130" alt=""/></li>
+                </ul>
+            </div>
+            <div class="t4"><img src="{% static "page3/text4.png" %}" width="888" height="75" alt=""/></div>
+            <div class="t5"><img src="{% static "page3/text5.png" %}" width="895" height="120" alt=""/></div>
+        </div>
+    </div>
+    <div class="next"><a href="{% url 'page4' %}"><img src="{% static "page2/next.png" %}" width="220" height="80" alt=""/></a></div>
+</div>
+</body>
+</html>

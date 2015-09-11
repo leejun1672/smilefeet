@@ -1,0 +1,59 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<!--script 시작
+
+-->
+<title>www.smilefeet.co.kr</title>
+<style type="text/css">
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select,blockquote{padding:0;margin:0;font:normal 12px NanumGothic, arial, 돋움;color:#777;}
+ul,li,ol,dl{list-style:none}
+a:link,a:hover,a:visited,a:active{text-decoration:none; color:#777}
+hr,legend{display:none}
+img,fieldset,button{border:0}
+*{border:0;}
+
+
+#wrap{width:1024px; height:1080px;border:1px solid black;}
+#logo{width:1024px; height:700px;}
+#logo img{width:544px; height:530px; position:absolute;left:240px; top:50px;}
+#main ul{width:410px; margin-left:240px;}
+#main ul .a img{width:40px; height:40px; margin:3px 0 0 41px;}
+#main ul .b img{width:120px; height:40px; margin-top:3px;}
+#main ul li{ float:left;width:100px;height:50px; margin:20px;}
+#main ul li .inputA{width:300px; height:50px;border:1px solid black; font-size:36px; text-align:right;}
+#main ul li .inputB{width:300px; height:50px; border:1px solid black;font-size:36px; text-align:right;}
+#main .okbutton{width:220px; height:80px; position:absolute; left:420px; top:920px; margin-bottom:50px;}
+#wrap .bor1{border:1px solid black; width:974px; height:1040px; margin:20px;}
+</style>
+</head>
+<body>
+<div id="wrap">
+<div class="bor1">
+    <div id="logo"><img src="{% static "index/logo.jpg" %}"></div>
+    <div id="main">
+        <form action="{% url 'page2' %}" method="post">
+        <ul>
+            <li class="a"><img src="{% static "index/height.png" %}"></li>
+            <li><input type="text" name="height" class="inputA" value="" placeholder="cm"/></li>
+            <li class="b"><img src="{% static "index/age.png" %}"></li>
+            <li><input id="search" name="age" class="inputB" value="" placeholder="세"/></li>
+            <input type="hidden" name="weight" value="{{ data.weight }}"/>
+            <input type="hidden" name="lha" value="{{ data.lha }}"/>
+            <input type="hidden" name="lfl" value="{{ data.lfl }}"/>
+            <input type="hidden" name="lfw" value="{{ data.lfw }}"/>
+            <input type="hidden" name="rha" value="{{ data.rha }}"/>
+            <input type="hidden" name="rfl" value="{{ data.rfl }}"/>
+            <input type="hidden" name="rfw" value="{{ data.rfw }}"/>
+            <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+        </ul>
+	    <button class="okbutton"><img src="{% static "index/okbutton.png" %}" width="220" height="80" alt=""/></div>
+        </form>
+    </div>
+ </div>
+</div>
+</body>
+</html>

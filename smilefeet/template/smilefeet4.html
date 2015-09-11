@@ -1,0 +1,93 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>www.smilefeet.co.kr</title>
+<style type="text/css">
+@media all and (max-width:769px) {}
+[출처] [CSS] 반응형 홈페이지 CSS|작성자 까미유
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select,blockquote{padding:0;margin:0;font:normal 12px NanumGothic, arial, 돋움;color:#777;}
+ul,li,ol,dl{list-style:none}
+a:link,a:hover,a:visited,a:active{text-decoration:none; color:#777}
+hr,legend{display:none}
+img,fieldset,button{border:0}
+p{font-size:17px;}
+*{border:0;}
+#wrap{width:1024px;height:1450px;;border:1px solid black;}
+.a{margin:20px 0 50px 50px;}
+.b{margin-left:70px;}
+.b ul li{margin:20px;}
+.c{margin:70px 0 50px 50px;}
+.d{width:320px; height:70px;margin:auto;}
+.d ul li{float:left;}
+.e{margin:100px 0 50px 50px;}
+.f{width:430px; height:110px; margin:auto;}
+.f ul li{float:left;}
+.f ul .f1{margin:25px 0 0 30px;}
+.g{margin:100px 0 50px 50px;}
+.h{width:330px; height:140px; margin:auto;}
+.h ul li{float:left;}
+.h ul .h1{margin:40px 0 0 10px;}
+.i{width:400px; height:140px; margin:auto; claer:both;}
+.i ul li{float:left;}
+.i ul .i1{margin:40px 0 0 10px;}
+.j{width:470px; height:140px; margin:0 0 0 350px; claer:both;}
+.j ul li{float:left;}
+.j ul .j1{margin:40px 0 0 10px;}
+#wrap .bor1{border:1px solid black; width:980px; height:1410px;margin:20px;}
+</style>
+</head>
+
+<body>
+<div id="wrap">
+<div class="bor1">
+    <div class="a"><img src="{% static "page4/text1.png" %}" width="253" height="24" alt=""/></div>
+    <div class="b">
+        <ul>
+            <li><img src="{% static "page4/text2.png" %}" width="440" height="23" alt=""/></li>
+            <li><img src="{% static "page4/text3.png" %}" width="712" height="23" alt=""/></li>
+            <li><img src="{% static "page4/text4.png" %}" width="579" height="48" alt=""/></li>
+            <li><img src="{% static "page4/text5.png" %}" width="786" height="27" alt=""/></li>
+        </ul>
+    </div>
+    <div class="c"><img src="{% static "page4/text6.png" %}" width="630" height="23" alt=""/></div>
+    <div class="d">
+    	<ul>
+        	<li><img src="{% static "page4/facebook.JPG" %}" width="63" height="67" alt=""/></li>
+            <li><img src="{% static "page4/kakao.JPG" %}" width="68" height="67" alt=""/></li>
+            <li><img src="{% static "page4/line.JPG" %}" width="61" height="66" alt=""/></li>
+            <li><img src="{% static "page4/google.JPG" %}" width="65" height="66" alt=""/></li>
+            <li><img src="{% static "page4/instagram.JPG" %}" width="61" height="65" alt=""/></li>
+        </ul>
+    </div>
+    <div class="e"><img src="{% static "page4/text7.png" %}" width="242" height="24" alt=""/></div>
+    <div class="f">
+    	<ul>
+        	<li><img src="{% static "page4/hospital.JPG" %}" width="172" height="106" alt=""/></li>
+            <li class="f1"><img src="{% static "page4/text8.png" %}" width="223" height="72" alt=""/></li>
+        </ul>
+    </div>
+	<div class="g"><img src="{% static "page4/text12.png" %}" width="196" height="25" alt=""/></div>
+    <div class="h">
+    	<ul>
+        	<li><img src="{% static "page4/rilarila.JPG" %}" width="143" height="132" alt=""/></li>
+            <li class="h1"><img src="{% static "page4/text9.png" %}" width="174" height="47" alt=""/></li>
+        </ul>
+    </div>    
+	<div class="i">        
+        <ul>
+        	<li><img src="{% static "page4/zepp.JPG" %}" width="184" height="122" alt=""/></li>
+            <li class="i1"><img src="{% static "page4/text10.png" %}" width="203" height="46" alt=""/></li>
+        </ul>    
+    </div>    
+	<div class="j">        
+        <ul>
+        	<li><img src="{% static "page4/gi.JPG" %}" width="134" height="134" alt=""/></li>
+            <li class="j1"><img src="{% static "page4/text11.png" %}" width="277" height="51" alt=""/></li>
+        </ul>    
+    </div>
+</div>
+</div>
+</body>
+</html>
