@@ -12,9 +12,12 @@ def page2(request):
     data = request.POST
     left_pos = int(532 + float(data['lha']) * 7.56)
     right_pos = int(532 + float(data['rha']) * 7.56)
-    height = int(re.search(r'\d+', data['height']).group())
+    try:
+        height = int(re.search(r'\d+', data['height']).group())
+    except:
+        height = 170
+
     bmi = float(data['weight'])/(float(height)/100)/(float(height)/100)
-    print bmi
     myContext = {
         'data' : data,
         'left_pos' : left_pos,
