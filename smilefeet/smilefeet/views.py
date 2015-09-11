@@ -3,14 +3,32 @@ from django.template import RequestContext
 import re
 
 def home(request):
+    data = request.GET
+    no_data = False
+    if (not 'weight' in data) or\
+       (not 'lha' in data) or\
+       (not 'lfl' in data) or\
+       (not 'lfw' in data) or\
+       (not 'rha' in data) or\
+       (not 'rfl' in data) or\
+       (not 'rfw' in data):
+        no_data = True
     myContext = {
-        'data' : request.GET
+        'data' : data,
+        'no_data' : no_data
     }
     return render_to_response('index.html', myContext, context_instance=RequestContext(request))
 
 def page2(request):
     data = request.POST
-    left_pos = int(532 + float(data['lha']) * 7.56)
+    try:
+        left_pos = int(532 + float(data['lha']) * 7.56)
+    except:
+        myContext = {
+            'no_data' : True 
+        }
+        return render_to_response('index.html', myContext, context_instance=RequestContext(request))
+        
     right_pos = int(532 + float(data['rha']) * 7.56)
     try:
         height = int(re.search(r'\d+', data['height']).group())

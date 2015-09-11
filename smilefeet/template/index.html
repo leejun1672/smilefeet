@@ -9,7 +9,7 @@
 -->
 <title>www.smilefeet.co.kr</title>
 <style type="text/css">
-body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select,blockquote{padding:0;margin:0;font:normal 12px NanumGothic, arial, 돋움;color:#777;}
+body,p,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select,blockquote{padding:0;margin:0;font:normal 12px NanumGothic, arial, 돋움;color:#777;}
 ul,li,ol,dl{list-style:none}
 a:link,a:hover,a:visited,a:active{text-decoration:none; color:#777}
 hr,legend{display:none}
@@ -33,6 +33,9 @@ img,fieldset,button{border:0}
 <body>
 <div id="wrap">
 <div class="bor1">
+    {% if no_data %}
+    <h1 style="color:red; text-align:center;">QR코드를 통해서 접속해주세요.</h1>
+    {% endif %}
     <div id="logo"><img src="{% static "index/logo.png" %}"></div>
     <div id="main">
         <form action="{% url 'page2' %}" method="post">
@@ -50,7 +53,10 @@ img,fieldset,button{border:0}
             <input type="hidden" name="rfw" value="{{ data.rfw }}"/>
             <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
         </ul>
+        {% if no_data %}
+        {% else %}
 	    <button class="okbutton"><img src="{% static "index/okbutton.png" %}" width="220" height="80" alt=""/></div>
+        {% endif %}
         </form>
     </div>
  </div>
