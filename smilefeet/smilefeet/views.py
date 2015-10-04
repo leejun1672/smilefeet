@@ -1,6 +1,11 @@
 from django.shortcuts import render, render_to_response
 from django.template import RequestContext
+from django.http import HttpResponseRedirect
+from django.core.urlresolvers import reverse
 import re
+
+from smilefeet.models import ImageModel
+from smilefeet.forms import ImageForm
 
 def home(request):
     data = request.GET
@@ -49,3 +54,21 @@ def page3(request):
 
 def page4(request):
     return render(request, 'smilefeet4.html', {})
+
+def upload(request):
+    if request.method == 'POST':
+        form = ImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            newimg = ImageModel(imgfile = request.FILES['imgfile'])
+            newimg.save()
+
+            return HttpResponseRedirect(reverse('upload'))
+    else:
+        form = ImageForm()
+
+    images = ImageModel.objects.all()
+
+    return render_to_response('list.html', {
+        'images' : images,
+        'form' : form},
+        context_instance=RequestContext(request))

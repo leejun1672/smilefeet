@@ -26,4 +26,6 @@ urlpatterns = [
     url(r'^page2$', views.page2, name='page2'),
     url(r'^page3$', views.page3, name='page3'),
     url(r'^page4$', views.page4, name='page4'),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    url(r'^upload$', views.upload, name='upload'),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
+    + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
